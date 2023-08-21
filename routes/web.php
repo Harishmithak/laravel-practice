@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::view('home','home');
+Route::view('contact','contact');
+Route::view('about','about');
 
 Route::get('g2', function () {
   $g2=['Ranita','selva','Dhanaprakash','Venkat','Vikram','Vasanth','Hari'];
