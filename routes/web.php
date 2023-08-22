@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,6 @@ Route::get('g2', function () {
         return view('g2', ['cg' => $g2]);
 });
 
-Route::get('cgvak','App\Http\Controllers\EmpController@details');
+// Route::get('cgvak','App\Http\Controllers\EmpController@details'); 
+//or
+Route::get('cgvak',[EmpController::class,'details']);
