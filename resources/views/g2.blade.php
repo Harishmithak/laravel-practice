@@ -8,7 +8,7 @@ G2 page
         @foreach($cg as $name)
         <div class="col-md-3">
             <div class="card mb-4">
-                <div class="card-body" style="background-color:LightGray">
+                <div class="card-body" style="background-color:LightGray;">
                     <h5 class="card-title">{{$name}}</h5>
                 </div>
             </div>

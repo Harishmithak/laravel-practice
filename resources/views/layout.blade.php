@@ -6,6 +6,7 @@
   <title>@yield('title','laravel_practice')</title>
   <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/187/187879.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="home">Home</a>
+        <a class="nav-link" href="home"><i class="fa-solid fa-house"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about">About</a>
@@ -31,7 +32,7 @@
         <a class="nav-link" href="g2">G2</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contact">Contact</a>
+        <a class="nav-link" href="contact"><i class="fa-solid fa-phone"></i></a>
       </li>
     </ul>
   </div>
