@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
+    public function scopeAge($query){
+        return $query->where('age', 21);
+    }
 }

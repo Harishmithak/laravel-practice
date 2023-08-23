@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('department');
             $table->string('designation');
             $table->integer('salary');
+            $table->string('companyname');
             $table->timestamps();
         });
     }

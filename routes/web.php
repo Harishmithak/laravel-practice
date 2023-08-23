@@ -29,3 +29,11 @@ Route::get('g2', function () {
 // Route::get('cgvak','App\Http\Controllers\EmpController@details'); 
 //or
 Route::get('cgvak',[EmpController::class,'details']);
+Route::get('employee',[EmpController::class,'emp']);
+Route::get('empdetails',[EmpController::class,'empd']);
+
+//form
+Route::view('form','form');
+
+
+

@@ -8,7 +8,7 @@ G2 page
         @foreach($cg as $name)
         <div class="col-md-3">
             <div class="card mb-4">
-                <div class="card-body" style="background-color:LightGray;">
+                <div class="card-body">
                     <h5 class="card-title">{{$name}}</h5>
                 </div>
             </div>
@@ -16,3 +16,11 @@ G2 page
         @endforeach
     </div>
     @endsection
+    <style> 
+    .card-body{
+      background-color:LightGray;
+    }
+    .card-body:hover {
+      background-color: lightblue; 
+  }
+</style>

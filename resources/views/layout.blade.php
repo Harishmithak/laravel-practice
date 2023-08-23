@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <img  class="navbar-brand" src="https://cdn-icons-png.flaticon.com/128/187/187879.png" style="height:50px;width:50px" >
 
@@ -30,6 +29,12 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="g2">G2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="employee">Emp</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="empdetails">Details</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="contact"><i class="fa-solid fa-phone"></i></a>
