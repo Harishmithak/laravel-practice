@@ -37,3 +37,5 @@ Route::view('form','form');
 
 
 
+Route::get('Emp','App\Http\Controllers\EmpController@details'); // Basics of Restful controllers
+Route::post('Emp',[EmpController::class,'store']);
