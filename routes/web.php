@@ -34,8 +34,14 @@ Route::get('empdetails',[EmpController::class,'empd']);
 
 //form
 Route::view('form','form');
-
-
-
-Route::get('Emp','App\Http\Controllers\EmpController@details'); // Basics of Restful controllers
+Route::view('form1','form1');
 Route::post('Emp',[EmpController::class,'store']);
+
+
+
+// Route::get('Emp','App\Http\Controllers\EmpController@details'); 
+
+
+//blade syntax
+Route::view('syntax','syntax');
+Route::get('form', 'App\Http\Controllers\EmpController@showEmployeeForm');
