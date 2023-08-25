@@ -14,6 +14,7 @@ Cgvak page
                     <h5 class="card-title">{{$emp->age}}</h5>
                     <h5 class="card-title">{{$emp->email}}</h5>
                     <h5 class="card-title">{{$emp->contactno}}</h5>
+                    <h5 class="card-title">{{$emp->companyid}}</h5>
 
                 </div>
             </div>

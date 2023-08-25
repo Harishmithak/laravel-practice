@@ -24,13 +24,58 @@ class EmpController extends Controller
         return view('employee', ['emp' => $emp]);
         // dd($emp);
        }
+   
+       public function empindex(){
+        $emp=Employee::all();
+        return view('index', ['emp' => $emp]);
+        // dd($emp);
+       }
 
        public function showEmployeeForm()
        {
            $Companies = Company::all();
            return view('form', compact('Companies'));
        }
+
+       public function show(Employee $emp){ 
+
+        return  view('show',compact('emp'));
+       }
+
+       public function edit(Employee $emp){ 
        
+         $Companies = Company::all();
+         return view ('edit',compact('emp','Companies'));
+        }
+
+        public function update(Employee $emp){
+
+          $emp->update($this->validateRequest());
+          return redirect('/Emp'.$emp->id);
+         }
+
+
+
+         private function validateRequest(){
+          return request()->validate([
+            'name' => 'required|string|min:3',
+            'age' => 'required|integer',
+            'email' => 'required|email',
+            'contactno' => ['required', 'integer'],
+      
+            'companyid' => 'required']); 
+       }
+
+       public function destroy(Employee $emp){
+        $emp -> delete();
+        return redirect('home');
+       }
+       
+       public function create( ){
+        $Companies = Company::all();
+        $emp = new Employee();   
+        return view ('create',compact('Companies','emp'));
+      }
     //Employee table with where condition
     //    public function emp(){
     //     $emp=Employee::where('age',21)->get();

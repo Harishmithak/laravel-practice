@@ -34,9 +34,18 @@ Route::get('empdetails',[EmpController::class,'empd']);
 
 //form
 Route::view('form','form');
+Route::view('show','show');
+Route::view('create','create');
 Route::view('form1','form1');
 Route::post('Emp',[EmpController::class,'store']);
+Route::view('index','index');
+ Route::get('index',[EmpController::class,'empindex']);
 
+ Route::get('/Emp/{emp}',[EmpController::class,'show']);
+ Route::get('/Emp/{emp}/edit',[EmpController::class,'edit']);
+ Route::patch('/Emp/{emp}',[EmpController::class, 'update']);
+ Route::delete('/Emp/{emp}',[EmpController::class,'destroy']);
+ Route::get('Emp',[EmpController::class,'create']);
 
 
 // Route::get('Emp','App\Http\Controllers\EmpController@details'); 
