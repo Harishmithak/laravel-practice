@@ -25,3 +25,45 @@
      </tr>   
  @endforeach
  </table>
+
+
+<style>
+
+  .table-container {
+    margin: 20px;
+  }
+
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+
+  .table th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 8px;
+    font-weight: bold;
+  }
+
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+
+  .table td {
+    padding: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
