@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,16 +16,16 @@ use App\Http\Controllers\EmpController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::view('home','home');
-Route::view('contact','contact');
-Route::view('about','about');
+Route::view('contact','contact')->middleware('test');
+Route::view('about','about')->middleware('test');
 
-Route::get('g2', function () {
-  $g2=['Ranita','selva','Dhanaprakash','Venkat','Vikram','Vasanth','Hari'];
-        return view('g2', ['cg' => $g2]);
-});
+// Route::get('g2', function () {
+//   $g2=['Ranita','selva','Dhanaprakash','Venkat','Vikram','Vasanth','Hari'];
+//         return view('g2', ['cg' => $g2]);
+// });
 
 // Route::get('cgvak','App\Http\Controllers\EmpController@details'); 
 //or
@@ -47,10 +48,14 @@ Route::view('index','index');
  Route::delete('/Emp/{emp}',[EmpController::class,'destroy']);
  Route::get('Emp',[EmpController::class,'create']);
 
-
 // Route::get('Emp','App\Http\Controllers\EmpController@details'); 
-
 
 //blade syntax
 Route::view('syntax','syntax');
+
 Route::get('form', 'App\Http\Controllers\EmpController@showEmployeeForm');
+
+Auth::routes();
+// Route::resource('Emp',EmpController::class)->middleware('auth');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
