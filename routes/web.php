@@ -19,8 +19,10 @@ Route::get('/', function () {
     return view('home');
 });
 Route::view('home','home');
-Route::view('contact','contact')->middleware('test');
-Route::view('about','about')->middleware('test');
+// Route::view('contact','contact')->middleware('test');
+// Route::view('about','about')->middleware('test');
+Route::view('contact','contact')->middleware('auth');
+Route::view('about','about')->middleware('auth');
 
 // Route::get('g2', function () {
 //   $g2=['Ranita','selva','Dhanaprakash','Venkat','Vikram','Vasanth','Hari'];
