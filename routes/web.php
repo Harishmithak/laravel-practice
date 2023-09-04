@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpController;
+use App\Http\Controllers\ContactFormController;
 
 
 /*
@@ -60,4 +61,7 @@ Route::get('form', 'App\Http\Controllers\EmpController@showEmployeeForm');
 Auth::routes();
 // Route::resource('Emp',EmpController::class)->middleware('auth');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::view('/contact/create','contact.create');
+ Route::get('/contact', [ContactFormController::class, 'create']);
+ Route::post('/contact', [ContactFormController::class, 'store']);
+ Route::view('/contact/display','contact.display');
