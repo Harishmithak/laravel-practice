@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Events\NewCustomerHasRegisteredEvent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\EmpController;
 use App\Models\Employee;
 use App\Models\Employeedetail;
 use App\Models\Company;
+use App\Mail\WelcomeNewUserMail;
 class EmpController extends Controller
 {
 
@@ -133,7 +134,18 @@ class EmpController extends Controller
               'companyid' => 'required'
         
             ]);
+            // $employee= Employee::create($data); 
+            // $Employee = $Employee::create($this->validateRequest());
+            // Mail::to($Employee->email)->send(new WelcomeNewUserMail());
           
+
+            dump('Newsletter Subsription');
+
+    dump('Notification to Admin about New User');
+ 
+
+    
+
             //  $emp6 = new Employee();    
             //  $emp6->name = request('name');
             //  $emp6->age = request('age');
@@ -152,7 +164,8 @@ class EmpController extends Controller
             // $emp7->companyname = request('companyname');
         
             // $emp7->save();
-             $Employee= Employee::create($data); 
+    $employee= Employee::create($data); 
+    event(new NewCustomerHasRegisteredEvent($employee));
            } 
        }
 

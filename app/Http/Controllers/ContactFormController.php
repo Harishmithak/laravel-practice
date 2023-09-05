@@ -23,5 +23,6 @@ class ContactFormController extends Controller
     // Alert::success('Success Message', 'Message sent successfully');
     // return redirect('/contact/display');
      return redirect('/contact/display')->with('action-feedback', 'Message sent successfully');
+     
     }
 }
