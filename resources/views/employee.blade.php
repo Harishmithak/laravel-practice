@@ -19,8 +19,13 @@ Cgvak page
                 </div>
             </div>
         </div>
+   
         @endforeach
     </div>
+    {{-- <div class="d-flex justify-content-center">
+        {{ $emp->links() }}
+    </div> --}}
+
     @endsection
 
     <style> 

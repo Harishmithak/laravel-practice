@@ -7,7 +7,7 @@ use App\Events\NewCustomerHasRegisteredEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class WelcomeNewCustomerListener
+class WelcomeNewCustomerListener implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -28,7 +28,7 @@ class WelcomeNewCustomerListener
     public function handle(NewCustomerHasRegisteredEvent $event)
     {
         $employee = $event->employee;
-
+sleep(10);
         // Send the welcome email
         Mail::to($employee->email)->send(new WelcomeNewUserMail());
         

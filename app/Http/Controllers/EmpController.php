@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 use App\Events\NewCustomerHasRegisteredEvent;
 use Illuminate\Http\Request;
@@ -8,6 +9,8 @@ use App\Models\Employee;
 use App\Models\Employeedetail;
 use App\Models\Company;
 use App\Mail\WelcomeNewUserMail;
+
+
 class EmpController extends Controller
 {
 
@@ -35,13 +38,16 @@ class EmpController extends Controller
 
         //Employee table without where condition
        public function emp(){
-        $emp=Employee::all();
+        // $emp=Employee::all();
+       $emp = Employee::paginate(5);
         return view('employee', ['emp' => $emp]);
         // dd($emp);
        }
+
    
        public function empindex(){
         $emp=Employee::all();
+      
         return view('index', ['emp' => $emp]);
         // dd($emp);
        }
@@ -53,7 +59,7 @@ class EmpController extends Controller
        }
 
        public function show(Employee $emp){ 
-
+       
         return  view('show',compact('emp'));
        }
 
@@ -165,6 +171,7 @@ class EmpController extends Controller
         
             // $emp7->save();
     $employee= Employee::create($data); 
+
     event(new NewCustomerHasRegisteredEvent($employee));
            } 
        }
