@@ -11,6 +11,8 @@ use App\Models\Company;
 use App\Mail\WelcomeNewUserMail;
 
 
+
+
 class EmpController extends Controller
 {
 
@@ -39,7 +41,7 @@ class EmpController extends Controller
         //Employee table without where condition
        public function emp(){
         // $emp=Employee::all();
-       $emp = Employee::paginate(5);
+       $emp = Employee::paginate(4);
         return view('employee', ['emp' => $emp]);
         // dd($emp);
        }
